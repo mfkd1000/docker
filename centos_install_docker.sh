@@ -1,6 +1,8 @@
 ﻿#!/bin/bash
 
 #更新内核
+
+yum -y erase podman buildah     # 将默认的podman和buildah删除
 # 安装docker环境依赖
 
 yum install -y yum-utils device-mapper-persistent-data lvm2
