@@ -44,12 +44,16 @@ docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docke
 
 
 
+echo "#################################################"
+
+echo "完成后网页登录http://IP:9000  打开docker管理面版"
+echo "完成后网页登录http://IP:9000  打开docker管理面版"
+echo "完成后网页登录http://IP:9000  打开docker管理面版"
+
+echo "#################################################"
+
 rm -rf centos_install_docker.sh
 # 重启
-
-echo "完成后http://IP:9000  打开docker管理面版"
-echo "完成后http://IP:9000  打开docker管理面版"
-echo "完成后http://IP:9000  打开docker管理面版"
 
 
 
