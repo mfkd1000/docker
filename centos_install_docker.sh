@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 
 #更新内核
 
@@ -8,10 +8,11 @@ yum -y erase podman buildah     # 将默认的podman和buildah删除
 yum install -y yum-utils device-mapper-persistent-data lvm2
 # 配置国内docker的yum源（阿里云）
 
+#yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 # 安装docker-ce
 
-yum install docker-ce docker-ce-cli containerd.io -y
+yum install -y docker-ce  # containerd.io  docker-ce-cli     
 # yum info 启动和设置开机启动
 
 systemctl start docker && systemctl enable docker
@@ -20,7 +21,7 @@ systemctl start docker && systemctl enable docker
 cat << "EOF" > /etc/docker/daemon.json
 
 {
-"registry-mirrors": ["https://docker.mirrors.ustc.edu.cn","https://dockerhub.azk8s.cn"]
+"registry-mirrors": ["https://docker.mirrors.ustc.edu.cn","https://dockerhub.azk8s.cn","https://ukcz41im.mirror.aliyuncs.com"]
 }
 
 EOF
@@ -45,6 +46,10 @@ docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docke
 
 rm -rf centos_install_docker.sh
 # 重启
+
+echo "完成后http://IP:9000  打开docker管理面版"
+echo "完成后http://IP:9000  打开docker管理面版"
+echo "完成后http://IP:9000  打开docker管理面版"
 
 
 
